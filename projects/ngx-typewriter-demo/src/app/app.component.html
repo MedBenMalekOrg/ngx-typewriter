@@ -1,16 +1,71 @@
 <div class="toolbar" role="banner">
-  <h1 >ngx-typewriter</h1>
+  <h1><tp-writer class="messages" [selector]="'twp-title'" [options]="options"></tp-writer></h1>
     <div class="spacer"></div>
   <h1>GITHUB</h1>
 </div>
 
 <div class="content" role="main">
 
+  <h2>Default</h2>
   <!-- Terminal -->
   <div class="terminal" >
-      <pre>ng generate component xyz</pre>
+      <pre>{{code1}}</pre>
   </div>
 
+  <div class="type-container">
+    <tp-writer class="messages" [selector]="'twp-1'" [options]="options1"></tp-writer>
+  </div>
+
+  <span class="space"></span>
+
+  <h2>List of phrases</h2>
+  <!-- Terminal -->
+  <div class="terminal" >
+    <pre>{{code2}}</pre>
+  </div>
+
+  <div class="type-container">
+    <tp-writer class="messages" [selector]="'twp-2'" [options]="options2"></tp-writer>
+  </div>
+
+  <span class="space"></span>
+
+  <h2>Demo with loop and increased speed</h2>
+  <!-- Terminal -->
+  <div class="terminal" >
+    <pre>{{code3}}</pre>
+  </div>
+
+  <div class="type-container">
+    <tp-writer class="messages" [selector]="'twp-3'" [options]="options3"></tp-writer>
+  </div>
+
+  <span class="space"></span>
+
+  <h2>Demo with style</h2>
+  <!-- Terminal -->
+  <div class="terminal" >
+    <pre>{{code4}}</pre>
+  </div>
+
+  <div class="type-container">
+    <tp-writer class="messages" [selector]="'twp-4'" [options]="options4"></tp-writer>
+  </div>
+
+  <span class="space"></span>
+
+  <div class="flex-list">
+    <h2>Adding text and change speed</h2>
+    <button class="btn black ml" (click)="addText()" [disabled]="disableBtn">add text</button>
+  </div>
+  <!-- Terminal -->
+  <div class="terminal" >
+    <pre>{{code6}}</pre>
+  </div>
+
+  <div class="type-container">
+    <tp-writer class="messages" [selector]="'tpw'" [options]="options6"></tp-writer>
+  </div>
 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>

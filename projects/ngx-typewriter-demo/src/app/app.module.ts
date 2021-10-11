@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import {NgxTypewriterModule} from "ngx-typewriter";
 
 @NgModule({
   declarations: [
@@ -9,6 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    NgxTypewriterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

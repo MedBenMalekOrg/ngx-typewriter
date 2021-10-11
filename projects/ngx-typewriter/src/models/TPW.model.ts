@@ -2,7 +2,7 @@ import {NgxTypewriterComponent} from "../lib/ngx-typewriter.component";
 
 export interface TPWInterface {
   textList?: string[];
-  text: string,
+  text?: string,
   speed?: number;
   color?: string | null;
   selector?: string | null;
@@ -42,7 +42,7 @@ export class TPW implements TPWInterface {
     if (this.textList.length === 0) {
       this.textList.push(this.text);
     } else {
-      if (this.text.length === 0) {
+      if (!this.text) {
         this.text = this.textList[this.textList.length-1];
       }
     }
