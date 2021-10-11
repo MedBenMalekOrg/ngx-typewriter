@@ -1,0 +1,30 @@
+{
+  "name": "ngx-typewriter",
+  "version": "0.0.1",
+  "author": {
+    "name": "Med Ben Malek",
+    "url": "https://github.com/MedBenMalek"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MedBenMalek/ngx-typewriter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MedBenMalek/ngx-typewriter/issues"
+  },
+  "keywords": [
+    "angular",
+    "typewriter",
+    "typewriterjs",
+    "effect",
+    "typing",
+    "writing"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^12.0.5",
+    "@angular/core": "^12.0.5"
+  },
+  "dependencies": {
+    "tslib": "^2.1.0"
+  }
+}

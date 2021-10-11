@@ -3,12 +3,34 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "ng serve ngx-typewriter-demo",
+    "build-demo": "ng build ngx-typewriter-demo --configuration production",
+    "build-lib": "ng build ngx-typewriter --configuration production",
+    "test-lib": "ng test ngx-typewriter",
+    "test-lib-headless": "ng test ngx-typewriter --watch=false --no-progress --browsers=ChromeHeadless",
+    "link-lib": "npm link dist/ngx-typewriter && npm link ngx-typewriter",
+    "publish-lib": "npm publish dist/ngx-typewriter",
+    "e2e": "ng e2e"
   },
-  "private": true,
+  "author": {
+    "name": "Med Ben Malek",
+    "url": "https://github.com/MedBenMalek"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MedBenMalek/ngx-typewriter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MedBenMalek/ngx-typewriter/issues"
+  },
+  "keywords": [
+    "angular",
+    "typewriter",
+    "typewriterjs",
+    "effect",
+    "typing",
+    "writing"
+  ],
   "dependencies": {
     "@angular/animations": "~12.0.3",
     "@angular/common": "~12.0.3",
@@ -23,6 +45,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~12.0.5",
     "@angular/cli": "~12.0.3",
     "@angular/compiler-cli": "~12.0.3",
     "@types/jasmine": "~3.6.0",
@@ -33,6 +56,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^12.0.0",
     "typescript": "~4.2.3"
   }
 }
