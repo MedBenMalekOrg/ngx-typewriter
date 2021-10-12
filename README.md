@@ -29,7 +29,7 @@ A small angular library for textwriter effect with styling.
 
 1. You have to add **tp-writer** component with the **options** and the **selector**.
 
-       <tp-writer class="messages" [selector]="'twp'" [options]="options"></tp-writer>
+       <tp-writer [selector]="'twp'" [options]="options"></tp-writer>
        ---
        NOTE: If selector is not provided the default selector will be 'tpw', if you are planning to add multiple tpwriter components you have to provide the selector to differentiate. 
 
