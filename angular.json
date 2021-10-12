@@ -51,7 +51,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-typewriter-demo",
+            "outputPath": "docs",
             "index": "projects/ngx-typewriter-demo/src/index.html",
             "main": "projects/ngx-typewriter-demo/src/main.ts",
             "polyfills": "projects/ngx-typewriter-demo/src/polyfills.ts",
@@ -134,9 +134,13 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "ngx-typewriter"
+  "defaultProject": "ngx-typewriter-demo"
 }
