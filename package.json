@@ -6,6 +6,7 @@
     "start": "ng serve ngx-typewriter-demo",
     "build-demo": "ng build ngx-typewriter-demo --configuration production",
     "build-lib": "ng build ngx-typewriter --configuration production",
+    "deploy-demo": "ng deploy --base-href=/ngx-typewriter/",
     "test-lib": "ng test ngx-typewriter",
     "test-lib-headless": "ng test ngx-typewriter --watch=false --no-progress --browsers=ChromeHeadless",
     "link-lib": "npm link dist/ngx-typewriter && npm link ngx-typewriter",
