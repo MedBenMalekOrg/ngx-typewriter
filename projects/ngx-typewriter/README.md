@@ -1,24 +1,119 @@
-# NgxTypewriter
+# ngx-typewriter
+![enter image description here](https://raw.githubusercontent.com/MedBenMalek/ngx-typewriter/main/images/tpw.gif)
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+A small angular library for textwriter effect with styling.
 
-## Code scaffolding
+## [**DEMO**](https://medbenmalek.github.io/ngx-typewriter/)
 
-Run `ng generate component component-name --project ngx-typewriter` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-typewriter`.
-> Note: Don't forget to add `--project ngx-typewriter` or else it will be added to the default project in your `angular.json` file. 
 
-## Build
+## Installation
 
-Run `ng build ngx-typewriter` to build the project. The build artifacts will be stored in the `dist/` directory.
+    npm i ngx-typewriter 
 
-## Publishing
 
-After building your library with `ng build ngx-typewriter`, go to the dist folder `cd dist/ngx-typewriter` and run `npm publish`.
+## Setup
 
-## Running unit tests
+    import {NgxTypewriterModule} from "ngx-typewriter";  
+      
+    @NgModule({  
+    declarations: [ ... ],  
+    imports: [  ...,  
+    NgxTypewriterModule  
+    ],  
+    providers: [],  
+    bootstrap: []  
+    })  
+    export class MyModule { }  
 
-Run `ng test ngx-typewriter` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Further help
+1. You have to add **tp-writer** component with the **options** and the **selector**.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+       <tp-writer class="messages" [selector]="'twp'" [options]="options"></tp-writer>
+       ---
+       NOTE: If selector is not provided the default selector will be 'tpw', if you are planning to add multiple tpwriter components you have to provide the selector to differentiate. 
+
+2. Define the options
+
+   	public options: TPWInterface = { 
+   		textList: ['ngx-typewriter'], 
+   		speed: 80,    
+   		loop: true,    
+   		delay: 200,  
+   	}
+
+3. If you want to make changes (like adding text, change speed, activate/deactivate looping...) you have to call **NgxTypewriterService** in the constructor then get the **TPW** instance by the **selector**.
+
+
+		import {NgxTypewriterService, TPW, TPWInterface} from "ngx-typewriter";
+
+		export class MyComponent {
+
+			public options: TPWInterface = { 
+				 textList: ['ngx-typewriter'], 
+				 speed: 80,    
+		        loop: true,    
+		        delay: 200,  
+			}
+			constructor(private typewriterService: NgxTypewriterService) {}
+		
+			addText() {  
+			  const tpw: TPW = this.typewriterService.getTPW('tpw');  
+			  tpw.speed = 200;  
+			  await tpw.addText('adding another text');  
+			}
+		}
+
+
+## Component Properties
+
+|Property|Type|Default|Description
+|--|--|--|--|
+|options|`TPWInterface`|`undefined`|List of options of the typewiter effect|
+|selector|`string`|`'tpw'`|The select is a unique id useful in the case of the existing of multiple typewriting components|
+|marker|`string`|`'|'`|the marker effect that displayed next the words|
+
+
+## Options
+
+List of properties in the options object
+
+|Property|Type|Default|Description
+|--|--|--|--|
+|textList|`string[]`|`[]`|List text to be displayed|
+|speed|`string`|`70`|speed of writing|
+|loop|`boolean`|`false`|set to `true` f you want to shoe the effect if loop|
+|delay|`number`|`1000`|delay between phrases|
+|classList|`{[className: string]: {[cssProperty: string]: string}}`|`{}`|List of CSS classes to be set in the text with `#tpw-key(word, class:class-name)#`|
+
+# Functions
+
+Call TPW instance
+
+    constructor(private typewriterService: NgxTypewriterService) {}
+    const tpw: TPW = this.typewriterService.getTPW('tpw');  
+Add text
+
+    await tpw.addText('adding another text');  
+Add css class
+
+    const slyle = {  
+      'color': 'red',  
+      'font-weight': 'bold'  
+    }  
+    tpw.addClass('my-class', slyle)
+
+# Update options properties
+
+You have the call TPW instance the you will have access to the properties
+
+Example: Update the loop to true
+
+    const tpw: TPW = this.typewriterService.getTPW('tpw');  
+    tpw.loop = true;
+
+# Styling
+
+To style words in the text you have to use a **special syntax** in the text which pretty is easy to use, all you have to do is to add `#tpw-key(text, color:red, font-weight:bold)#`, this "function" should have the **text as the first parameter** then you can add the list of styles or classes.
+
+**Using CSS classes**: you Only have to set the class name with the key class `#tpw-key(text, class:my-class)#`

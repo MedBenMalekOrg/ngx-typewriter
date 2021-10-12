@@ -12,6 +12,8 @@
   "bugs": {
     "url": "https://github.com/MedBenMalek/ngx-typewriter/issues"
   },
+  "license": "MIT",
+  "homepage": "https://medbenmalek.github.io/ngx-typewriter/",
   "keywords": [
     "angular",
     "typewriter",

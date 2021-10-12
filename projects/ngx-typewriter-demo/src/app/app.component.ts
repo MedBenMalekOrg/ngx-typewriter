@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgxTypewriterService, TPW, TPWInterface} from "ngx-typewriter";
+  import {NgxTypewriterService, TPW, TPWInterface} from "ngx-typewriter";
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,9 @@ export class AppComponent {
   constructor(private typewriterService: NgxTypewriterService) {}
 
   public options: TPWInterface = {
-    text: ' #tpw-key(ngx, color:red)#-typewriter',
-    speed: 300
+    speed: 80,
+    loop: true,
+    delay: 200,
   }
 
   public options1: TPWInterface = {
@@ -134,6 +135,7 @@ export class AppComponent {
     this.disableBtn = true;
     tpw.speed = 200;
     await tpw.addText('adding another text');
+    tpw.loop = true;
     this.disableBtn = false;
   }
 
