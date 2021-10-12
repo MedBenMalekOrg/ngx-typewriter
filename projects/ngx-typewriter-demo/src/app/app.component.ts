@@ -12,18 +12,17 @@ export class AppComponent {
   constructor(private typewriterService: NgxTypewriterService) {}
 
   public options: TPWInterface = {
-    speed: 80,
-    loop: true,
-    delay: 200,
+    textList: ['#tpw-key(ngx, color:red)#-typewriter'],
+    speed: 400,
   }
 
   public options1: TPWInterface = {
-    text: 'Welcome to ngx-typewriter demo',
+    textList: ['Welcome to ngx-typewriter demo'],
   }
 
   public code1 = `  in component.ts
   public options: TPWInterface = {
-      text: 'Welcome to ngx-typewriter demo',
+      textList: ['Welcome to ngx-typewriter demo'],
   }
   ---------------------
   in component.html
@@ -104,7 +103,7 @@ export class AppComponent {
   <tp-writer [options]=\"options\"></tp-writer>`;
 
   public options6: TPWInterface = {
-    text: 'you can another text'
+    textList: ['you can another text']
   }
 
   public code6 = `  in component.ts
@@ -113,7 +112,7 @@ export class AppComponent {
   export class AppComponent {
     public disableBtn = false;
     public options: TPWInterface = {
-       text: 'you can another text'
+       textList: ['you can another text']
     }
     constructor(private typewriterService: NgxTypewriterService) {}
 
@@ -135,7 +134,6 @@ export class AppComponent {
     this.disableBtn = true;
     tpw.speed = 200;
     await tpw.addText('adding another text');
-    tpw.loop = true;
     this.disableBtn = false;
   }
 

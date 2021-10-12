@@ -21,6 +21,8 @@ export class TPW implements TPWInterface {
   private _delay = 1000;
   private _classList: ObjectInterface<ObjectInterface<string, 'key'>, 'className'> = {};
   public displayText: string = '';
+  private currentText: number = 0;
+  private inAddText = false;
 
   constructor(params: TPWInterface) {
     if (!params) {
@@ -117,10 +119,22 @@ export class TPW implements TPWInterface {
     NgxTypewriterComponent.styleService.setStyles(`.${className}`, style);
   }
 
-  async addText(text: string, current = true) {
-    this.textList.push(text);
-    if (current) this.text = text;
-    await this.loopThroughText(text);
+  async addText(text: string|string[]): Promise<any> {
+    if (this.inAddText) {
+      return;
+    }
+    this.inAddText = true;
+    if (this.currentText !== this.textList.length) {
+      await this.Timeout(500);
+      return this.addText(text);
+    }
+    if (typeof text === 'string') {
+      this.textList.push(text);
+    } else {
+      this.textList = [...this.textList, ...text];
+    }
+    await this.loopThroughTextList(this.currentText);
+    this.inAddText = false;
   }
 
   async runDisplay() {
@@ -200,6 +214,7 @@ export class TPW implements TPWInterface {
   }
 
   private async loopThroughTextList(index = 0) {
+    this.currentText = index;
     if (index < this.textList.length) {
       await this.loopThroughText(this.textList[index])
       index += 1;
