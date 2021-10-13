@@ -1,7 +1,7 @@
 # ngx-typewriter
 ![enter image description here](https://raw.githubusercontent.com/MedBenMalek/ngx-typewriter/main/images/tpw.gif)
 
-A small angular library for textwriter effect with styling.
+A small angular library for typewriter effect with styling.
 
 ## [**DEMO**](https://medbenmalek.github.io/ngx-typewriter/)
 
@@ -105,7 +105,7 @@ Add css class
 
 # Update options properties
 
-You have the call TPW instance the you will have access to the properties
+You have the call TPW instance eith the selector then you will have access to the properties.
 
 Example: Update the loop to true
 
@@ -114,6 +114,6 @@ Example: Update the loop to true
 
 # Styling
 
-To style words in the text you have to use a **special syntax** in the text which pretty is easy to use, all you have to do is to add `#tpw-key(text, color:red, font-weight:bold)#`, this "function" should have the **text as the first parameter** then you can add the list of styles or classes.
+To style words in the text you have to use a **special syntax** in the text which id pretty easy to use, all you have to do is to add `#tpw-key(text, ...styles)#` (exemple `#tpw-key(text, color:red, font-weight:bold)#`), this "function" should have the **text as the first parameter** then you can add the list of styles or classes.
 
-**Using CSS classes**: you Only have to set the class name with the key class `#tpw-key(text, class:my-class)#`
+**Using CSS classes**: you only have to set the class name with the key class `#tpw-key(text, class:my-class)#`
