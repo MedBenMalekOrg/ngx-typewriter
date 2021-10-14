@@ -71,7 +71,7 @@ A small angular library for typewriter effect with styling.
 |--|--|--|--|
 |options|`TPWInterface`|`undefined`|List of options of the typewiter effect|
 |selector|`string`|`'tpw'`|The selector is a unique identifier useful in case of the existing of multiple typewriting components|
-|marker|`string`|`'\|'`|The marker displayed next the words|
+|marker|`string`|`'\|'`|The marker displayed next to the words|
 
 
 ## Options
