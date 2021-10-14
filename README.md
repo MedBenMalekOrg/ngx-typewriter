@@ -71,7 +71,7 @@ A small angular library for typewriter effect with styling.
 |--|--|--|--|
 |options|`TPWInterface`|`undefined`|List of options of the typewiter effect|
 |selector|`string`|`'tpw'`|The selector is a unique identifier useful in case of the existing of multiple typewriting components|
-|marker|`string`|`'\|'`|the marker effect that displayed next the words|
+|marker|`string`|`'\|'`|The marker displayed next the words|
 
 
 ## Options
@@ -81,9 +81,9 @@ List of properties in the options object
 |Property|Type|Default|Description
 |--|--|--|--|
 |textList|`string[]`|`[]`|List text to be displayed|
-|speed|`string`|`70`|speed of writing|
-|loop|`boolean`|`false`|set to `true` f you want to shoe the effect if loop|
-|delay|`number`|`1000`|delay between phrases|
+|speed|`string`|`70`|Speed of writing|
+|loop|`boolean`|`false`|Set to `true` f you want to shoe the effect if loop|
+|delay|`number`|`1000`|Delay between phrases|
 |classList|`{[className: string]: {[cssProperty: string]: string}}`|`{}`|List of CSS classes to be set in the text with `#tpw-key(word, class:class-name)#`|
 
 # Functions
